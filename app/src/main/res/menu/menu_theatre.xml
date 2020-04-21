@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/createShowMenu"
+        android:title="Create Show"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/updateShowMenu"
+        android:title="Update Show"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/viewBookingMenu"
+        android:title="View Booking"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/viewFeedbackMenu"
+        android:title="View Feedback"
+        app:showAsAction="never" />
+
+
+</menu>

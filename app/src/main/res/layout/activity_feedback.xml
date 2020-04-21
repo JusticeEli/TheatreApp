@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+
+    tools:context=".FeedbackActivity">
+    <!--PROGRESS.._________________________________  -->
+    <LinearLayout
+        android:id="@+id/loadingLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:background="@mipmap/road"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <ProgressBar
+            style="@style/TextAppearance.AppCompat.Large"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/loadTxtView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center_horizontal"
+            android:text="loading...." />
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:id="@+id/scrollView"
+        android:background="@mipmap/bike_3"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:gravity="center_horizontal">
+
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/radioExcellent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="excelletnt" />
+
+            <RadioButton
+                android:id="@+id/radioGood"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="good" />
+
+            <RadioButton
+                android:id="@+id/radioMedium"
+                android:checked="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="medium" />
+
+            <RadioButton
+                android:id="@+id/radioBad"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="bad" />
+
+            <RadioButton
+                android:id="@+id/radioUnacceptable"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="unacceptable" />
+
+
+        </RadioGroup>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:text="Submit"
+            android:background="@drawable/button"
+            android:layout_marginTop="10dp"
+            android:textAllCaps="false"
+            android:id="@+id/submitBtn"/>
+
+    </LinearLayout>
+
+</LinearLayout>

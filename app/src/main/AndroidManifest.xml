@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.justice.theatreapp1">
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:name=".data.ApplicationClass"
+        android:allowBackup="true"
+        android:icon="@mipmap/theatre"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/theatre"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".theatre.TheatreSetupActivity"></activity>
+        <activity android:name=".user.user_register.UserSetupActivity" />
+        <activity android:name=".FeedbackActivity" />
+        <activity android:name=".user.update_show.UpdateShowActivity" />
+        <activity android:name=".theatre.theatre_first_page.view_booking.ViewBookingActivity" />
+        <activity android:name=".user.user_first_page.MyProfileActivity" />
+        <activity android:name=".user.user_first_page.book_my_show.BookNowActivity" />
+        <activity android:name=".user.user_first_page.book_my_show.BookMyShowActivity" />
+        <activity android:name=".user.user_first_page.UserFirstPageActivity" />
+        <activity android:name=".user.user_login.UserLoginActivity" />
+        <activity android:name=".user.user_register.UserRegisterActivity" />
+        <activity android:name=".theatre.theatre_first_page.view_feedback.ViewFeedbackActivity" />
+        <activity android:name=".view_show.ViewShowActivity" />
+        <activity android:name=".user.view_details.ViewDetailsActivity" />
+        <activity android:name=".theatre.theatre_first_page.CreateShowActivity" />
+        <activity android:name=".theatre.theatre_first_page.TheatreFirstPage" />
+        <activity android:name=".theatre.theatre_login.TheatreLoginActivity" />
+        <activity android:name=".theatre.theatre_register.TheatreRegisterActivity" />
+        <activity android:name=".main.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
