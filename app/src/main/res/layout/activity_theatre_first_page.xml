@@ -34,7 +34,7 @@
                     android:layout_marginTop="50dp"
                     android:orientation="horizontal">
 
-                    <ImageView
+                    <de.hdodenhof.circleimageview.CircleImageView
                         android:layout_width="200dp"
                         android:layout_height="70dp"
                         android:src="@mipmap/create_show"
@@ -59,7 +59,7 @@
                     android:orientation="horizontal"
                     android:layout_below="@+id/createShow">
 
-                    <ImageView
+                    <de.hdodenhof.circleimageview.CircleImageView
                         android:layout_width="200dp"
                         android:layout_height="70dp"
                         android:src="@mipmap/update" />
@@ -83,7 +83,7 @@
                     android:orientation="horizontal"
                     android:layout_below="@+id/updateShow">
 
-                    <ImageView
+                    <de.hdodenhof.circleimageview.CircleImageView
                         android:layout_width="200dp"
                         android:layout_height="70dp"
                         android:src="@mipmap/view_booking" />
@@ -107,7 +107,7 @@
                     android:orientation="horizontal"
                     android:layout_below="@id/viewBooking">
 
-                    <ImageView
+                    <de.hdodenhof.circleimageview.CircleImageView
                         android:layout_width="200dp"
                         android:layout_height="70dp"
                         android:src="@mipmap/feedback" />

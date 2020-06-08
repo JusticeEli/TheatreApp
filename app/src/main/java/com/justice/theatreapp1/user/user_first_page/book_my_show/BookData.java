@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 public class BookData implements Serializable {
 
-    private int showId;
+    private String showId;
     private String filmName;
     private String email;
     private int noOfSeats;
@@ -13,7 +13,7 @@ public class BookData implements Serializable {
 
     }
 
-    public BookData(int showId, String filmName, String email, int noOfSeats) {
+    public BookData(String showId, String filmName, String email, int noOfSeats) {
         this.showId = showId;
         this.filmName = filmName;
         this.email = email;
@@ -37,11 +37,11 @@ public class BookData implements Serializable {
         this.noOfSeats = noOfSeats;
     }
 
-    public int getShowId() {
+    public String getShowId() {
         return showId;
     }
 
-    public void setShowId(int showId) {
+    public void setShowId(String showId) {
         this.showId = showId;
     }
 

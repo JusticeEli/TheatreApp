@@ -10,9 +10,11 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@mipmap/background3">
+       android:background="@color/colorPrimaryLight">
 
-        <RelativeLayout
+        <LinearLayout
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
             android:id="@+id/topRelLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -20,27 +22,13 @@
             <TextView
                 android:id="@+id/textView"
                 android:layout_width="wrap_content"
-
                 android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
                 android:text="Feed Back"
                 android:textSize="15sp"
                 android:textStyle="bold|italic" />
 
-            <EditText
-                android:id="@+id/searchEdtTxt"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/textView"
-                android:layout_marginLeft="50dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginRight="50dp"
-                android:gravity="center"
-                android:hint="Search"
-                android:textSize="15sp" />
-            <!--CREATE A RECYCLER VIEW-->
 
-        </RelativeLayout>
+        </LinearLayout>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"

@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+
     android:layout_height="match_parent"
     android:background="@color/colorPrimaryLight"
     tools:context=".user.user_login.UserLoginActivity">
@@ -30,11 +31,11 @@
         android:id="@+id/loadingLinearLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:visibility="gone"
         android:layout_below="@+id/imageView"
         android:gravity="center"
         android:orientation="vertical"
-        android:padding="20dp">
+        android:padding="20dp"
+        android:visibility="gone">
 
         <ProgressBar
             style="@style/TextAppearance.AppCompat.Large"
@@ -52,45 +53,75 @@
 
 
     <ScrollView
+        android:id="@+id/scrollView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/scrollView"
         android:layout_below="@+id/imageView">
-        <RelativeLayout
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
             android:padding="15dp">
 
-            <EditText
-                android:gravity="center_horizontal"
-                android:id="@+id/languageEdtTxt"
-                android:textColor="@color/colorRed"
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="50dp"
-                android:hint="Email"
-                android:textSize="15sp"
+                android:textColorHint="@android:color/darker_gray"
+                app:boxBackgroundMode="outline"
+                app:boxCornerRadiusTopEnd="20dp"
+                app:boxCornerRadiusTopStart="20dp">
 
-                />
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/languageEdtTxt"
+                    android:hint="Email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="50dp"
+                    android:gravity="center_horizontal"
+                    android:inputType="textEmailAddress"
+                    android:textColor="@color/colorRed"
+                    android:textColorHint="@android:color/darker_gray"
+                    android:textSize="15sp"
 
-            <EditText
-                android:textColor="@color/colorRed"
-                android:gravity="center_horizontal"
-                android:id="@+id/passwordEdtTxt"
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/languageEdtTxt"
+                android:hint="password"
+                android:textColorHint="@android:color/darker_gray"
+                app:boxBackgroundMode="outline"
+                app:endIconMode="password_toggle"
                 android:layout_marginTop="20dp"
-                android:hint="Password"
-                android:inputType="textPassword"
-                android:textSize="15sp"
+                app:boxCornerRadiusTopEnd="20dp"
+                app:boxCornerRadiusTopStart="20dp">
 
-                />
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/passwordEdtTxt"
+                    android:layout_width="match_parent"
+
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/languageEdtTxt"
+                    android:layout_marginTop="20dp"
+                    android:gravity="center_horizontal"
+                    android:inputType="textPassword"
+                    android:textColor="@color/colorRed"
+                    android:textSize="15sp"
+
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
 
             <Button
                 android:id="@+id/loginBtn"
-                android:layout_width="match_parent"
+                android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/passwordEdtTxt"
                 android:layout_marginTop="20dp"
@@ -110,8 +141,8 @@
                 android:gravity="center"
                 android:text="Forgot Password"
                 android:textSize="15sp"
-                android:textStyle="bold"
-                />
+                android:textStyle="bold" />
+
             <TextView
                 android:id="@+id/registerTxtView"
                 android:layout_width="match_parent"
@@ -121,15 +152,12 @@
                 android:gravity="center"
                 android:text="Register"
                 android:textSize="15sp"
-                android:textStyle="bold"
-                />
+                android:textStyle="bold" />
 
 
-        </RelativeLayout>
+        </LinearLayout>
 
     </ScrollView>
-
-
 
 
 </RelativeLayout>

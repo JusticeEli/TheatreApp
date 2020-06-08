@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@mipmap/background3"
     android:padding="5dp"
     tools:context=".theatre.theatre_register.TheatreRegisterActivity">
 
@@ -23,12 +22,13 @@
     <LinearLayout
         android:id="@+id/loadingLinearLayout"
         android:layout_width="match_parent"
+
         android:layout_height="match_parent"
-        android:visibility="gone"
         android:layout_below="@+id/textView"
         android:gravity="center"
         android:orientation="vertical"
-        android:padding="20dp">
+        android:padding="20dp"
+        android:visibility="gone">
 
         <ProgressBar
             style="@style/TextAppearance.AppCompat.Large"
@@ -47,87 +47,141 @@
 
     <ScrollView
         android:id="@+id/scrollView"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView"
-        android:background="@color/colorPrimaryLight"
-
-        >
+        android:background="@color/colorPrimaryLight">
 
         <LinearLayout
-            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="300dp"
+            android:layout_height="match_parent"
             android:background="@color/colorPrimaryLight"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:padding="10dp">
 
-            android:padding="50dp">
-
-            <EditText
-                android:id="@+id/filmNameEdtTxt"
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_marginTop="20dp"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:gravity="center_horizontal"
                 android:hint="Name"
-                android:inputType="textPersonName"
+                app:boxBackgroundMode="outline"
+                app:boxCornerRadiusTopEnd="20dp"
+                app:boxCornerRadiusTopStart="20dp">
 
-                android:textColor="@color/colorRed"
-                android:textSize="18sp" />
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/filmNameEdtTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:gravity="center_horizontal"
+                    android:inputType="textPersonName"
+                    android:textColor="@color/colorRed"
+                    android:textSize="18sp" />
 
 
+            </com.google.android.material.textfield.TextInputLayout>
 
-
-            <EditText
-                android:id="@+id/summaryEdtTxt"
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                 android:layout_marginTop="5dp"
-                android:gravity="center_horizontal"
-                android:hint="Mobile"
-                android:inputType="number"
+                android:hint="mobile"
+                android:layout_marginTop="20dp"
 
-                android:textColor="@color/colorRed"
-                android:textSize="18sp" />
+                app:boxBackgroundMode="outline"
+                app:boxCornerRadiusTopEnd="20dp"
+                app:boxCornerRadiusTopStart="20dp">
 
-            <EditText
-                android:id="@+id/city"
+                <EditText
+                    android:id="@+id/summaryEdtTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center_horizontal"
+                    android:inputType="number"
+
+                    android:textColor="@color/colorRed"
+                    android:textSize="18sp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:gravity="center_horizontal"
-                android:hint="City"
-                android:inputType="text"
+                android:hint="city"
+                android:layout_marginTop="20dp"
 
-                android:textColor="@color/colorRed"
-                android:textSize="18sp" />
+                app:boxBackgroundMode="outline"
+                app:boxCornerRadiusTopEnd="20dp"
+                app:boxCornerRadiusTopStart="20dp">
 
-            <EditText
-                android:id="@+id/castEdtTxt"
+                <EditText
+                    android:id="@+id/city"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center_horizontal"
+                    android:inputType="text"
+
+                    android:textColor="@color/colorRed"
+                    android:textSize="18sp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:gravity="center_horizontal"
-                android:hint="Address/Landmark"
+                android:hint="address/landmark"
+                app:boxBackgroundMode="outline"
+                android:layout_marginTop="20dp"
 
-                android:textColor="@color/colorRed"
-                android:textSize="18sp" />
+                app:boxCornerRadiusTopEnd="20dp"
+                app:boxCornerRadiusTopStart="20dp">
 
-            <EditText
-                android:id="@+id/aadharEdtTxt"
+                <EditText
+                    android:id="@+id/castEdtTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center_horizontal"
+
+                    android:textColor="@color/colorRed"
+                    android:textSize="18sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:gravity="center_horizontal"
-                android:hint="Aadhar No/voter ID/License"
+                android:hint="aadhar no/voter id/license"
+                app:boxBackgroundMode="outline"
+                android:layout_marginTop="20dp"
 
-                android:textColor="@color/colorRed"
-                android:textSize="18sp" />
+                app:boxCornerRadiusTopEnd="20dp"
+                app:boxCornerRadiusTopStart="20dp">
+
+                <EditText
+                    android:id="@+id/aadharEdtTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center_horizontal"
+
+                    android:textColor="@color/colorRed"
+                    android:textSize="18sp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
 
             <Button
                 android:id="@+id/registerBtn"
-                android:layout_width="match_parent"
+                android:layout_width="300dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="20dp"
                 android:background="@drawable/button"
                 android:hint="Register"
                 android:textColor="@color/colorWhite"

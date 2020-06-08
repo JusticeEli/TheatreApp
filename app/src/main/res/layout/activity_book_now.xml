@@ -3,15 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@color/colorPrimaryLight"
     android:layout_height="match_parent"
-    android:background="@mipmap/road"
-
     tools:context=".user.user_first_page.book_my_show.BookNowActivity">
 
     <TextView
         android:id="@+id/bookNowTxtView"
         android:layout_width="wrap_content"
-
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:text="Book Now"
@@ -48,50 +46,47 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/bookNowTxtView"
-        android:layout_marginTop="20dp"
-        android:background="@mipmap/background3">
+        android:layout_marginTop="20dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@mipmap/bike_3"
             android:orientation="vertical"
             android:padding="5dp">
 
-            <RelativeLayout
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp">
+                android:hint="show Id"
+                app:boxBackgroundMode="outline"
+                app:boxCornerRadiusBottomEnd="30dp"
+                app:boxCornerRadiusTopStart="30dp"
+                app:boxStrokeWidth="3dp">
 
-                <TextView
-                    android:id="@+id/idTxtView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Show ID"
-                    android:textSize="16sp" />
-
-                <EditText
+                <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/showIdEdtTxt"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/idTxtView"
-                    android:inputType="number"
-                    android:textColor="@color/colorAccent" />
-            </RelativeLayout>
+                    android:layout_below="@+id/filmName"
+                    android:inputType="text"
+                    />
 
-            <RelativeLayout
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp">
+                android:hint="film name"
+                app:boxBackgroundMode="outline"
+                app:boxCornerRadiusBottomEnd="30dp"
+                app:boxCornerRadiusTopStart="30dp"
+                app:boxStrokeWidth="3dp">
 
-                <TextView
-                    android:id="@+id/filmName"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Film Name"
-                    android:textSize="16sp" />
-
-                <EditText
+                <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/filmNameEdtTxt"
 
                     android:layout_width="match_parent"
@@ -99,58 +94,59 @@
                     android:layout_below="@+id/filmName"
                     android:inputType="text"
                     android:textColor="@color/colorAccent" />
-            </RelativeLayout>
 
-            <RelativeLayout
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp">
+                android:hint="availabe seats"
+                app:boxBackgroundMode="outline"
+                app:boxCornerRadiusBottomEnd="30dp"
+                app:boxCornerRadiusTopStart="30dp"
+                app:boxStrokeWidth="3dp">
 
-                <TextView
-                    android:id="@+id/availableSeatTxtView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Available Seats"
-                    android:textSize="16sp" />
-
-                <EditText
+                <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/availableSeatEditTxt"
 
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/availableSeatTxtView"
                     android:textColor="@color/colorAccent" />
-            </RelativeLayout>
 
-            <RelativeLayout
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp">
+                android:hint="Enter no of seats to book"
+                app:boxBackgroundMode="outline"
+                app:boxCornerRadiusBottomEnd="30dp"
+                app:boxCornerRadiusTopStart="30dp"
+                app:boxStrokeWidth="3dp">
 
-                <TextView
-                    android:id="@+id/noOfSeatsTxtView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="No of Seat"
-                    android:textSize="16sp" />
-
-                <EditText
+                <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/noOfSeatsEdtTxt"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/noOfSeatsTxtView"
-                    android:inputType="number"
                     android:gravity="center_horizontal"
-                    android:hint="Enter no of seats to book"
+
+                    android:inputType="number"
                     android:textColor="@color/colorAccent" />
-            </RelativeLayout>
+
+            </com.google.android.material.textfield.TextInputLayout>
 
 
             <Button
                 android:id="@+id/submitBtn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="20dp"
                 android:background="@drawable/button"
                 android:text="Submit"
                 android:textSize="20sp"

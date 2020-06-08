@@ -6,6 +6,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -20,7 +22,7 @@ import com.justice.theatreapp1.theatre.theatre_first_page.ShowData;
 
 import java.util.List;
 
-public class BookMyShowRecyclerAdapter extends FirestoreRecyclerAdapter<ShowData, BookMyShowRecyclerAdapter.ViewHolder> {
+public class BookMyShowRecyclerAdapter extends FirestoreRecyclerAdapter<ShowData, BookMyShowRecyclerAdapter.ViewHolder> implements Filterable {
     private Context context;
 
 
@@ -44,7 +46,7 @@ public class BookMyShowRecyclerAdapter extends FirestoreRecyclerAdapter<ShowData
         holder.bookNowBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ApplicationClass.documentSnapshot=getSnapshots().getSnapshot(position);
+                ApplicationClass.documentSnapshot = getSnapshots().getSnapshot(position);
                 Intent intent = new Intent(context, BookNowActivity.class);
                 context.startActivity(intent);
             }
@@ -52,7 +54,7 @@ public class BookMyShowRecyclerAdapter extends FirestoreRecyclerAdapter<ShowData
         holder.feedbackBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ApplicationClass.documentSnapshot=getSnapshots().getSnapshot(position);
+                ApplicationClass.documentSnapshot = getSnapshots().getSnapshot(position);
                 Intent intent = new Intent(context, FeedbackActivity.class);
                 context.startActivity(intent);
 
@@ -71,6 +73,28 @@ public class BookMyShowRecyclerAdapter extends FirestoreRecyclerAdapter<ShowData
 
     }
 
+    @Override
+    public Filter getFilter() {
+        return filter;
+    }
+
+    private Filter filter = new Filter() {
+        @Override
+        protected FilterResults performFiltering(CharSequence constraint) {
+
+            if (constraint.toString().isEmpty()){
+
+            }
+
+
+            return null;
+        }
+
+        @Override
+        protected void publishResults(CharSequence constraint, FilterResults results) {
+
+        }
+    };
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         private TextView filmNameTxtView, showTimeTxtView, languageTxtView, categoryTxtView, castTxtView, seatTxtView, cityTxtView;

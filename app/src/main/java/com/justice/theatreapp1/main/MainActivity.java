@@ -1,5 +1,6 @@
 package com.justice.theatreapp1.main;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
@@ -15,10 +16,14 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.backendless.Backendless;
 import com.backendless.async.callback.AsyncCallback;
-import com.backendless.exceptions.BackendlessFault;
+
 import com.backendless.persistence.DataQueryBuilder;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 import com.justice.theatreapp1.R;
 import com.justice.theatreapp1.data.AllData;
 import com.justice.theatreapp1.theatre.theatre_first_page.ShowData;
@@ -131,54 +136,25 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     ///////////////BACKENDLESS///////////////////////////////////
     private void loadAllDataFromDatabase() {
-        DataQueryBuilder dataQueryBuilder = DataQueryBuilder.create();
-        showProgress(true);
-        Backendless.Persistence.of(ShowData.class).find(dataQueryBuilder, new AsyncCallback<List<ShowData>>() {
-            @Override
-            public void handleResponse(List<ShowData> response) {
-                showProgress(false);
-                AllData.showsDataList = response;
-                Toast.makeText(MainActivity.this, "Show data list Success", Toast.LENGTH_SHORT).show();
-            }
 
+        FirebaseFirestore.getInstance().collection("showdata").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
             @Override
-            public void handleFault(BackendlessFault fault) {
-                showProgress(false);
-                Toast.makeText(MainActivity.this, "Error: " + fault.getMessage(), Toast.LENGTH_SHORT).show();
+            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                if (task.isSuccessful()){
+                    for (QueryDocumentSnapshot documentSnapshot:task.getResult()){
+                        AllData.showsDataList.add(documentSnapshot.toObject(ShowData.class));
+                    }
+
+                }else {
+                    Toast.makeText(MainActivity.this, "Error: "+task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+
+                }
+
             }
         });
 
-        showProgress(true);
-        Backendless.Persistence.of(BookData.class).find(dataQueryBuilder, new AsyncCallback<List<BookData>>() {
-            @Override
-            public void handleResponse(List<BookData> response) {
-                showProgress(false);
-                AllData.bookDataList = response;
-                Toast.makeText(MainActivity.this, "Book data listSuccess", Toast.LENGTH_SHORT).show();
-            }
 
-            @Override
-            public void handleFault(BackendlessFault fault) {
-                showProgress(false);
-                Toast.makeText(MainActivity.this, "Error: " + fault.getMessage(), Toast.LENGTH_SHORT).show();
-            }
-        });
-        showProgress(true);
-        Backendless.Persistence.of(Feedback.class).find(dataQueryBuilder, new AsyncCallback<List<Feedback>>() {
-            @Override
-            public void handleResponse(List<Feedback> response) {
-                showProgress(false);
-                AllData.feedbackList = response;
-                Toast.makeText(MainActivity.this, "Feed back listSuccess", Toast.LENGTH_SHORT).show();
-            }
 
-            @Override
-            public void handleFault(BackendlessFault fault) {
-                showProgress(false);
-                Toast.makeText(MainActivity.this, "Error: " + fault.getMessage(), Toast.LENGTH_SHORT).show();
-            }
-        });
-        showProgress(true);
 
     }
 }

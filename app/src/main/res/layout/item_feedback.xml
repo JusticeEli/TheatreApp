@@ -1,104 +1,111 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    app:cardElevation="20dp"
+    android:layout_marginTop="15dp"
+    android:orientation="vertical"
     app:cardCornerRadius="20dp"
-    android:layout_marginTop="15dp">
+    app:cardElevation="20dp">
 
     <LinearLayout
-        android:padding="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryLight"
         android:orientation="vertical"
-        android:background="@mipmap/background3"
-        >
+        android:padding="10dp">
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="20dp">
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
                 android:text="Film Name: "
+                android:textColor="@color/colorBlue"
                 android:textSize="20sp"
-                android:textStyle="italic"
-                android:layout_marginRight="10dp"
-                android:textColor="@color/colorBlue"/>
+                android:textStyle="italic" />
+
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
                 android:id="@+id/filmNameTxtView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
 
-                android:textSize="15sp"
-                android:textColor="@color/colorAccent"/>
+                android:textColor="@color/colorAccent"
+                android:textSize="15sp" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-           >
+            android:orientation="horizontal">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
                 android:text="Name: "
+                android:textColor="@color/colorBlue"
                 android:textSize="20sp"
-                android:textStyle="italic"
-                android:layout_marginRight="10dp"
-                android:textColor="@color/colorBlue"/>
+                android:textStyle="italic" />
+
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
                 android:id="@+id/nameTxtView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
 
-                android:textSize="15sp"
-                android:textColor="@color/colorAccent"/>
+                android:textColor="@color/colorAccent"
+                android:textSize="15sp" />
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
                 android:text="Feedback: "
+                android:textColor="@color/colorBlue"
                 android:textSize="20sp"
-                android:textStyle="italic"
-                android:layout_marginRight="10dp"
-                android:textColor="@color/colorBlue"/>
+                android:textStyle="italic" />
+
             <TextView
+                android:id="@+id/feedbackTxtView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/feedbackTxtView"
 
-                android:textSize="15sp"
-                android:textColor="@color/colorAccent"/>
+                android:textColor="@color/colorAccent"
+                android:textSize="15sp" />
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="email: "
-                android:textSize="20sp"
-                android:textStyle="italic"
                 android:layout_marginRight="10dp"
-                android:textColor="@color/colorBlue"/>
+                android:text="email: "
+                android:textColor="@color/colorBlue"
+                android:textSize="20sp"
+                android:textStyle="italic" />
+
             <TextView
+                android:id="@+id/emailTxtView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/emailTxtView"
-                android:textSize="15sp"
-                android:textColor="@color/colorAccent"/>
+                android:textColor="@color/colorAccent"
+                android:textSize="15sp" />
         </LinearLayout>
-
-
 
 
     </LinearLayout>

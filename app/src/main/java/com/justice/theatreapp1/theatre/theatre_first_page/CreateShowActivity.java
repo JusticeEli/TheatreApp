@@ -121,15 +121,19 @@ public class CreateShowActivity extends AppCompatActivity implements NavigationV
     }
 
     private void setAdapters() {
-        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(getApplicationContext(), R.layout.item_spinner, ApplicationClass.languageAdapter);
+        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_spinner_dropdown_item, ApplicationClass.languageAdapter);
+        arrayAdapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
         languageSpinner.setAdapter(arrayAdapter);
         arrayAdapter.notifyDataSetChanged();
 
-        ArrayAdapter<String> arrayAdapter2 = new ArrayAdapter<String>(this, R.layout.item_spinner, ApplicationClass.categoryAdapter);
+        ArrayAdapter<String> arrayAdapter2 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, ApplicationClass.categoryAdapter);
+        arrayAdapter2.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
+
         categorySpinner.setAdapter(arrayAdapter2);
         arrayAdapter2.notifyDataSetChanged();
 
-        ArrayAdapter<String> arrayAdapter3 = new ArrayAdapter<String>(this, R.layout.item_spinner, ApplicationClass.cityLocalityAdapter);
+        ArrayAdapter<String> arrayAdapter3 = new ArrayAdapter<String>(this,android. R.layout.simple_spinner_dropdown_item, ApplicationClass.cityLocalityAdapter);
+        arrayAdapter3.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
         citySpinner.setAdapter(arrayAdapter3);
         arrayAdapter3.notifyDataSetChanged();
 

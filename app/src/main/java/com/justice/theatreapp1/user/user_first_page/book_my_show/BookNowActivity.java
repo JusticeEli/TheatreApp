@@ -15,11 +15,10 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.backendless.Backendless;
-import com.backendless.async.callback.AsyncCallback;
-import com.backendless.exceptions.BackendlessFault;
+
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.justice.theatreapp1.R;
@@ -83,7 +82,7 @@ public class BookNowActivity extends AppCompatActivity {
 
         }
 
-        bookData = new BookData(Integer.valueOf(showId.getText().toString()), filmNameEdtTxt.getText().toString(), AllData.user.getEmail(), Integer.valueOf(noOfSeats.getText().toString()));
+        bookData = new BookData(showId.getText().toString(), filmNameEdtTxt.getText().toString(), FirebaseAuth.getInstance().getCurrentUser().getEmail(), Integer.valueOf(noOfSeats.getText().toString()));
 
         ///////BACKENDLESS//////////////////////
         showProgress(true);
@@ -139,7 +138,7 @@ public class BookNowActivity extends AppCompatActivity {
     }
 
     private void setDataInFields() {
-        showId.setText(showData.getShowId());
+        showId.setText(ApplicationClass.documentSnapshot.getId());
 
         // TODO: 28-Jan-20 create field for show ids in the ShowData class
         filmNameEdtTxt.setText(showData.getFilmName());

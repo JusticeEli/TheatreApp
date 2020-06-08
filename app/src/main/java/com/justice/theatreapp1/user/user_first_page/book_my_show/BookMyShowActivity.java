@@ -3,6 +3,7 @@ package com.justice.theatreapp1.user.user_first_page.book_my_show;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -12,6 +13,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.EditText;
 
@@ -31,8 +33,6 @@ import java.util.List;
 
 public class BookMyShowActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private RecyclerView recyclerView;
-    private EditText searchEdtTxt;
-
     //////////////////DRAWER LAYOUT////////////////////////
 
     private NavigationView navigationView;
@@ -49,6 +49,14 @@ public class BookMyShowActivity extends AppCompatActivity implements NavigationV
 
         setAdapter();
         setListeners();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        getMenuInflater().inflate(R.menu.search_menu,menu);
+
+         return super.onCreateOptionsMenu(menu);
     }
 
     ///////////////////////NAVIGATION DRAWER/////////////////////////////////////////////
@@ -118,7 +126,6 @@ public class BookMyShowActivity extends AppCompatActivity implements NavigationV
 
     private void initWidget() {
         recyclerView = findViewById(R.id.recyclerView);
-        searchEdtTxt = findViewById(R.id.search);
 
     }
 

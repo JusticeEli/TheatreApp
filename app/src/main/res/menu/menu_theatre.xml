@@ -4,19 +4,23 @@
 
     <item
         android:id="@+id/createShowMenu"
+        android:icon="@drawable/ic_create_show"
         android:title="Create Show"
         app:showAsAction="never" />
     <item
         android:id="@+id/updateShowMenu"
+        android:icon="@drawable/ic_update_show"
         android:title="Update Show"
         app:showAsAction="never" />
     <item
         android:id="@+id/viewBookingMenu"
         android:title="View Booking"
+        android:icon="@drawable/ic_view_booking"
         app:showAsAction="never" />
     <item
         android:id="@+id/viewFeedbackMenu"
         android:title="View Feedback"
+        android:icon="@drawable/ic_view_feedback"
         app:showAsAction="never" />
 
 

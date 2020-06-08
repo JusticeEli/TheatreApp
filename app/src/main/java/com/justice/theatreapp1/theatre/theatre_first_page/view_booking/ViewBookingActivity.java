@@ -31,7 +31,6 @@ import com.justice.theatreapp1.user.user_first_page.book_my_show.BookData;
 import java.util.ArrayList;
 
 public class ViewBookingActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
-    private EditText searchEdtTxt;
     private Button exportBtn;
     private RecyclerView recyclerView;
 
@@ -135,7 +134,6 @@ public class ViewBookingActivity extends AppCompatActivity implements Navigation
 
     private void initWidget() {
 
-        searchEdtTxt = findViewById(R.id.searchEdtTxt);
         exportBtn = findViewById(R.id.exportBtn);
         recyclerView = findViewById(R.id.recyclerView);
 

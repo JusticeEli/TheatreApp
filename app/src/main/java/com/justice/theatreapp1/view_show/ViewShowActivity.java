@@ -12,6 +12,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
@@ -70,6 +71,13 @@ public class ViewShowActivity extends AppCompatActivity implements NavigationVie
         setAdapter();
         setListeners();
 
+
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.search_menu, menu);
+        return super.onCreateOptionsMenu(menu);
 
     }
 
@@ -168,8 +176,6 @@ public class ViewShowActivity extends AppCompatActivity implements NavigationVie
     private void initWidget() {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         recyclerView = findViewById(R.id.recyclerView);
-        searchEdtTxt = findViewById(R.id.searchEdtTxt);
-
         ////////////////PROGRESS_BAR//////////////////////
         load = findViewById(R.id.loadingLinearLayout);
         loadTxtView = findViewById(R.id.loadTxtView);
@@ -196,14 +202,10 @@ public class ViewShowActivity extends AppCompatActivity implements NavigationVie
     public void setAdapter() {
         Query query = FirebaseFirestore.getInstance().collection("showdata");
         FirestoreRecyclerOptions<ShowData> recyclerOptions = new FirestoreRecyclerOptions.Builder<ShowData>().setLifecycleOwner(this).setQuery(query, ShowData.class).build();
-
-
         viewShowRecyclerView = new ViewShowRecyclerView(this, recyclerOptions);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-
         recyclerView.setAdapter(viewShowRecyclerView);
     }
-
 
 
 }

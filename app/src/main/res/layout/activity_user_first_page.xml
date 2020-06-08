@@ -20,7 +20,7 @@
             android:orientation="horizontal"
             android:id="@+id/first"
             android:layout_marginTop="70dp">
-            <ImageView
+            <de.hdodenhof.circleimageview.CircleImageView
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:src="@mipmap/book_my_show_icon"
@@ -45,7 +45,7 @@
             android:layout_below="@+id/first"
             android:layout_marginTop="20dp"
             android:id="@+id/second">
-            <ImageView
+            <de.hdodenhof.circleimageview.CircleImageView
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:src="@mipmap/my_profile"

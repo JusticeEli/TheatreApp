@@ -41,6 +41,8 @@ import com.justice.theatreapp1.user.user_register.UserSetupActivity;
 
 public class MyProfileActivity extends AppCompatActivity {
     private EditText name;
+    private EditText email;
+
     private EditText mobile;
     private EditText address;
 
@@ -87,6 +89,7 @@ public class MyProfileActivity extends AppCompatActivity {
                 userRegisterData = documentSnapshot.toObject(UserRegisterData.class);
                 originalName = userRegisterData.getName();
                 name.setText(userRegisterData.getName());
+                email.setText(FirebaseAuth.getInstance().getCurrentUser().getEmail());
                 mobile.setText(userRegisterData.getMobile());
                 address.setText(userRegisterData.getAddress());
             }
@@ -110,9 +113,11 @@ public class MyProfileActivity extends AppCompatActivity {
 
     private void updateUserData() {
         String name1 = name.getText().toString().trim();
+        String email1 = email.getText().toString().trim();
+
         String mobile1 = mobile.getText().toString().trim();
         String address1 = address.getText().toString().trim();
-        if (name1.isEmpty() || mobile1.isEmpty() || address1.isEmpty()) {
+        if (name1.isEmpty()  || mobile1.isEmpty() || address1.isEmpty()) {
             Toast.makeText(this, "Please Fill All Fields !!", Toast.LENGTH_SHORT).show();
             return;
         }
@@ -156,17 +161,20 @@ public class MyProfileActivity extends AppCompatActivity {
         }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
-                Toast.makeText(MyProfileActivity.this, "Error: "+e.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(MyProfileActivity.this, "Error: " + e.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
     }
 
     private void initWidgets() {
         name = findViewById(R.id.nameEdtTxt);
-        mobile = findViewById(R.id.summaryEdtTxt);
-        address = findViewById(R.id.castEdtTxt);
+        email = findViewById(R.id.emailEdtTxt);
+        mobile = findViewById(R.id.mobileEdtTxt);
+        address = findViewById(R.id.addressEdtTxt);
         updateBtn = findViewById(R.id.updateBtn);
-
         progressDialog = new ProgressDialog(this);
+
+
+        email.setEnabled(false);
     }
 }

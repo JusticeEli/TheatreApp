@@ -13,6 +13,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.EditText;
 
@@ -32,7 +33,6 @@ import java.util.List;
 public class ViewFeedbackActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private RecyclerView recyclerView;
-    private EditText searchEdtTxt;
 
     //////////////////DRAWER LAYOUT////////////////////////
 
@@ -52,6 +52,12 @@ public class ViewFeedbackActivity extends AppCompatActivity implements Navigatio
 
         setAdapter();
         setListeners();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.search_menu,menu);
+        return super.onCreateOptionsMenu(menu);
     }
 
     ////////////////////////NAVIGATION DRAWER/////////////////////////////////////////////
@@ -136,7 +142,5 @@ public class ViewFeedbackActivity extends AppCompatActivity implements Navigatio
     private void initWidgets() {
 
         recyclerView = findViewById(R.id.recyclerView);
-
-        searchEdtTxt = findViewById(R.id.searchEdtTxt);
     }
 }
