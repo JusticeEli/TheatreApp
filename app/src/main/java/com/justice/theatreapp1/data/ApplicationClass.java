@@ -29,9 +29,6 @@ public class ApplicationClass extends Application {
 
 
     ///////////BACKENDLESS////////////////////
-    private static final String SERVER_URL = "https://api.backendless.com";
-    private static final String APPLICATION_ID = "BF83717F-EECE-A449-FFB0-1985A857DB00";
-    private static final String API_KEY = "C5FB60A8-D40C-455E-99AB-229BA49E1C5C";
 
     @Override
     public void onCreate() {
@@ -43,9 +40,7 @@ public class ApplicationClass extends Application {
 
         /////BACKENDLESS//////////////////
 
-        Backendless.setUrl(SERVER_URL);
-        Backendless.initApp(getApplicationContext(), APPLICATION_ID, API_KEY);
-
+     
        // loadAllDataFromDatabase();
         ////////////////////////////////
 /**

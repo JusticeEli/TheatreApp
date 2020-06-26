@@ -121,29 +121,17 @@ public class UserFirstPageActivity extends AppCompatActivity implements View.OnC
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.first:
-                Intent intent = new Intent(this, BookMyShowActivity.class);
-                startActivity(intent);
 
-                break;
-
-            case R.id.second:
-                Intent intent1 = new Intent(this, MyProfileActivity.class);
-                 startActivity(intent1);
-
-
-                break;
             case R.id.bookMyShowBtn:
                 Intent intent2 = new Intent(this, BookMyShowActivity.class);
                 startActivity(intent2);
-
                 break;
+            case R.id.second:
 
             case R.id.myProfileBtn:
-                Intent intent3 = new Intent(this, MyProfileActivity.class);
-                intent3.putExtra("email", AllData.user.getEmail());
-                startActivity(intent3);
 
-
+                Intent intent1 = new Intent(this, MyProfileActivity.class);
+                startActivity(intent1);
                 break;
             default:
                 break;

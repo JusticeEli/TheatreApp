@@ -60,7 +60,7 @@ public class CreateShowActivity extends AppCompatActivity implements NavigationV
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_show);
-
+setTitle("Create Show");
 
         initWidgets();
         initNavigationDrawer();

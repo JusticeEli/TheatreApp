@@ -47,6 +47,7 @@ public class BookNowActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_book_now);
+        setTitle("Book Now");
 
 
         showData = ApplicationClass.documentSnapshot.toObject(ShowData.class);

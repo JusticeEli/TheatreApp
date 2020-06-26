@@ -44,7 +44,7 @@ public class TheatreLoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_theatre_login);
-
+        setTitle("Theatre Login");
         initWidgets();
         setListeners();
         resetEdtText();

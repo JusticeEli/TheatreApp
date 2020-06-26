@@ -5,26 +5,19 @@ import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.LinearLayout;
-import android.widget.ScrollView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.backendless.Backendless;
-import com.backendless.async.callback.AsyncCallback;
-import com.backendless.exceptions.BackendlessFault;
-import com.backendless.persistence.DataQueryBuilder;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -37,16 +30,13 @@ import com.justice.theatreapp1.theatre.theatre_first_page.view_booking.ViewBooki
 import com.justice.theatreapp1.theatre.theatre_first_page.view_feedback.ViewFeedbackActivity;
 import com.justice.theatreapp1.user.update_show.UpdateShowActivity;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class ViewShowActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private RecyclerView recyclerView;
     private EditText searchEdtTxt;
 
 
-    private ViewShowRecyclerView viewShowRecyclerView;
+    private ViewShowRecyclerViewAdapter viewShowRecyclerViewAdapter;
 
     ///////////PROGRESS lINEAR_LAYOUT/////////
     private LinearLayout load;
@@ -63,15 +53,31 @@ public class ViewShowActivity extends AppCompatActivity implements NavigationVie
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_show);
 
-
+        setTitle("View Show");
         initWidget();
         initNavigationDrawer();
 
         AllData.readAllDataFromFiles();
         setAdapter();
         setListeners();
+        setSwipeListenerToRecyclerItems();
 
 
+    }
+
+    private void setSwipeListenerToRecyclerItems() {
+
+        new ItemTouchHelper(new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
+            @Override
+            public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
+                return false;
+            }
+
+            @Override
+            public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
+                viewShowRecyclerViewAdapter.deleteBtnPressed(viewHolder.getAdapterPosition());
+            }
+        }).attachToRecyclerView(recyclerView);
     }
 
     @Override
@@ -202,9 +208,9 @@ public class ViewShowActivity extends AppCompatActivity implements NavigationVie
     public void setAdapter() {
         Query query = FirebaseFirestore.getInstance().collection("showdata");
         FirestoreRecyclerOptions<ShowData> recyclerOptions = new FirestoreRecyclerOptions.Builder<ShowData>().setLifecycleOwner(this).setQuery(query, ShowData.class).build();
-        viewShowRecyclerView = new ViewShowRecyclerView(this, recyclerOptions);
+        viewShowRecyclerViewAdapter = new ViewShowRecyclerViewAdapter(this, recyclerOptions);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.setAdapter(viewShowRecyclerView);
+        recyclerView.setAdapter(viewShowRecyclerViewAdapter);
     }
 
 

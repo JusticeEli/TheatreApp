@@ -8,16 +8,7 @@
     tools:context=".user.user_register.UserSetupActivity">
 
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:text="Register"
-        android:textSize="30sp"
-        android:textStyle="bold"
 
-        />
 
     <!--PROGRESS.._________________________________  -->
     <LinearLayout
@@ -72,8 +63,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="15dp"
-                    android:gravity="center_horizontal"
-
                     android:inputType="text"
 
                     android:textColor="@color/colorRed"
@@ -95,7 +84,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="15dp"
-                    android:gravity="center_horizontal"
                     android:inputType="number"
 
                     android:textColor="@color/colorRed"
@@ -115,7 +103,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
-                    android:gravity="center_horizontal"
                     android:textColor="@color/colorRed"
                     android:textSize="18sp" />
 
@@ -133,8 +120,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:gravity="center_horizontal"
-
                     android:textColor="@color/colorRed"
                     android:textSize="18sp" />
 

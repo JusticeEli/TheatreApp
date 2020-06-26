@@ -56,7 +56,7 @@ public class ViewFeedbackActivity extends AppCompatActivity implements Navigatio
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.search_menu,menu);
+        getMenuInflater().inflate(R.menu.search_menu, menu);
         return super.onCreateOptionsMenu(menu);
     }
 
@@ -134,7 +134,6 @@ public class ViewFeedbackActivity extends AppCompatActivity implements Navigatio
     }
 
     private void setListeners() {
-
 
 
     }

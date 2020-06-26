@@ -4,20 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-   android:padding="10dp"
+    android:padding="10dp"
     tools:context=".theatre.theatre_login.TheatreLoginActivity">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:text="Theatre Login"
-
-        android:textSize="35sp"
-        android:textStyle="bold|italic" />
-
-    <ImageView
+       <ImageView
         android:id="@+id/imageView"
         android:layout_width="50dp"
         android:layout_height="50dp"
@@ -81,7 +71,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
-                    android:gravity="center_horizontal"
                     android:inputType="textEmailAddress"
                     android:textColor="@color/colorRed"
 
@@ -93,23 +82,19 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
                 android:hint="password"
                 app:boxBackgroundMode="outline"
-                app:endIconMode="password_toggle"
                 app:boxCornerRadiusTopEnd="20dp"
-                app:boxCornerRadiusTopStart="20dp">
+                app:boxCornerRadiusTopStart="20dp"
+                app:endIconMode="password_toggle">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/passwordEdtTxt"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/languageEdtTxt"
-                    android:layout_marginTop="20dp"
-                    android:gravity="center_horizontal"
                     android:inputType="textPassword"
                     android:textColor="@color/colorRed"
-
                     android:textSize="18sp" />
 
             </com.google.android.material.textfield.TextInputLayout>

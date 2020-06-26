@@ -12,29 +12,12 @@
         android:layout_height="match_parent"
        android:background="@color/colorPrimaryLight">
 
-        <LinearLayout
-            android:gravity="center_horizontal"
-            android:orientation="vertical"
-            android:id="@+id/topRelLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
 
-            <TextView
-                android:id="@+id/textView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Feed Back"
-                android:textSize="15sp"
-                android:textStyle="bold|italic" />
-
-
-        </LinearLayout>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_below="@id/topRelLayout"
             android:background="@color/colorPrimaryLight">
 
 

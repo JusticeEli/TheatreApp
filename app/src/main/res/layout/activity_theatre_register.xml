@@ -16,8 +16,6 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-
             android:hint="email"
             app:boxBackgroundMode="filled">
 
@@ -34,8 +32,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:hint="password"
-            app:endIconMode="password_toggle"
-            app:boxBackgroundMode="filled">
+            app:boxBackgroundMode="filled"
+            app:endIconMode="password_toggle">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/passwordEdtTxt"
@@ -49,9 +47,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            app:endIconMode="password_toggle"
             android:hint="confirm password"
-            app:boxBackgroundMode="filled">
+            app:boxBackgroundMode="filled"
+            app:endIconMode="password_toggle">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/confirmPasswordEdtTxt"

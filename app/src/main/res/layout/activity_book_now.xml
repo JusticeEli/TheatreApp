@@ -3,24 +3,16 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@color/colorPrimaryLight"
     android:layout_height="match_parent"
+    android:background="@color/colorPrimaryLight"
     tools:context=".user.user_first_page.book_my_show.BookNowActivity">
 
-    <TextView
-        android:id="@+id/bookNowTxtView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:text="Book Now"
-        android:textSize="30dp"
-        android:textStyle="bold|italic" />
+
     <!--PROGRESS.._________________________________  -->
     <LinearLayout
         android:id="@+id/loadingLinearLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/bookNowTxtView"
         android:gravity="center"
         android:orientation="vertical"
         android:padding="20dp"
@@ -45,7 +37,6 @@
         android:id="@+id/scrollView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/bookNowTxtView"
         android:layout_marginTop="20dp">
 
         <LinearLayout
@@ -68,10 +59,10 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/showIdEdtTxt"
                     android:layout_width="match_parent"
+                    android:textColor="@color/colorAccent"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/filmName"
-                    android:inputType="text"
-                    />
+                    android:inputType="text" />
 
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -88,10 +79,8 @@
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/filmNameEdtTxt"
-
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/filmName"
                     android:inputType="text"
                     android:textColor="@color/colorAccent" />
 
@@ -110,10 +99,8 @@
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/availableSeatEditTxt"
-
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/availableSeatTxtView"
                     android:textColor="@color/colorAccent" />
 
 
@@ -134,8 +121,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/noOfSeatsTxtView"
-                    android:gravity="center_horizontal"
-
                     android:inputType="number"
                     android:textColor="@color/colorAccent" />
 

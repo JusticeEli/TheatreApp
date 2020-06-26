@@ -34,14 +34,13 @@ public class UserRegisterActivity extends AppCompatActivity {
     private ScrollView scrollView;
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_register);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         initWidgets();
-
+        setTitle("UserRegister");
         setActionListeners();
     }
 
@@ -97,7 +96,6 @@ public class UserRegisterActivity extends AppCompatActivity {
     private void displaySetupPage() {
         startActivity(new Intent(this, UserSetupActivity.class));
     }
-
 
 
     private void setActionListeners() {

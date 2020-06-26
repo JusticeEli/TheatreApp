@@ -74,7 +74,7 @@ public class UpdateShowActivity extends AppCompatActivity implements NavigationV
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_update_show);
 
-
+        setTitle("Update Show");
         initWidgets();
         initNavigationDrawer();
 
@@ -284,11 +284,11 @@ public class UpdateShowActivity extends AppCompatActivity implements NavigationV
         /////////////////////////////////////
 
 
-        FirebaseFirestore.getInstance().collection("bookdata").whereEqualTo("filmName",filmName).get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+        FirebaseFirestore.getInstance().collection("bookdata").whereEqualTo("filmName", filmName).get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
             @Override
             public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
-                for (QueryDocumentSnapshot snapshot:queryDocumentSnapshots){
-                    BookData bookData=snapshot.toObject(BookData.class);
+                for (QueryDocumentSnapshot snapshot : queryDocumentSnapshots) {
+                    BookData bookData = snapshot.toObject(BookData.class);
                     bookData.setFilmName(showData.getFilmName());
                     snapshot.getReference().set(bookData);
 
@@ -296,7 +296,7 @@ public class UpdateShowActivity extends AppCompatActivity implements NavigationV
 
             }
         });
-     //////////////////////////////////////
+        //////////////////////////////////////
 
     }
 

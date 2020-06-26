@@ -15,31 +15,11 @@
         android:padding="10dp">
 
 
-        <RelativeLayout
-            android:id="@+id/topRelLayout"
-            android:layout_width="match_parent"
-            android:layout_height="70dp"
-           android:background="@color/colorPrimaryLight">
-
-            <TextView
-                android:id="@+id/textView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:text="View Show"
-                android:textColor="@color/colorRed"
-                android:textSize="15sp"
-                android:textStyle="bold|italic" />
-
-
-
-        </RelativeLayout>
         <!--PROGRESS.._________________________________  -->
         <LinearLayout
             android:id="@+id/loadingLinearLayout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_below="@+id/topRelLayout"
             android:gravity="center"
             android:orientation="vertical"
             android:padding="20dp"
@@ -66,8 +46,7 @@
             android:id="@+id/recyclerView"
             android:layout_width="match_parent"
             android:layout_height="800dp"
-            android:layout_below="@+id/topRelLayout"
-           android:background="@color/colorPrimaryLight">
+            android:background="@color/colorPrimaryLight">
 
         </androidx.recyclerview.widget.RecyclerView>
 

@@ -6,17 +6,7 @@
     android:layout_height="match_parent"
     android:padding="5dp"
     tools:context=".theatre.theatre_register.TheatreRegisterActivity">
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:text="Theatre Register"
-        android:textSize="30sp"
-        android:textStyle="bold"
-
-        />
+    >
 
     <!--PROGRESS.._________________________________  -->
     <LinearLayout
@@ -56,15 +46,15 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/colorPrimaryLight"
-            android:orientation="vertical"
             android:gravity="center_horizontal"
+            android:orientation="vertical"
             android:padding="10dp">
 
             <com.google.android.material.textfield.TextInputLayout
-                android:layout_marginTop="20dp"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
                 android:hint="Name"
                 app:boxBackgroundMode="outline"
                 app:boxCornerRadiusTopEnd="20dp"
@@ -75,7 +65,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="15dp"
-                    android:gravity="center_horizontal"
                     android:inputType="textPersonName"
                     android:textColor="@color/colorRed"
                     android:textSize="18sp" />
@@ -87,8 +76,8 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="mobile"
                 android:layout_marginTop="20dp"
+                android:hint="mobile"
 
                 app:boxBackgroundMode="outline"
                 app:boxCornerRadiusTopEnd="20dp"
@@ -99,7 +88,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
-                    android:gravity="center_horizontal"
                     android:inputType="number"
 
                     android:textColor="@color/colorRed"
@@ -111,8 +99,8 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="city"
                 android:layout_marginTop="20dp"
+                android:hint="city"
 
                 app:boxBackgroundMode="outline"
                 app:boxCornerRadiusTopEnd="20dp"
@@ -123,7 +111,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
-                    android:gravity="center_horizontal"
                     android:inputType="text"
 
                     android:textColor="@color/colorRed"
@@ -135,10 +122,9 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
                 android:hint="address/landmark"
                 app:boxBackgroundMode="outline"
-                android:layout_marginTop="20dp"
-
                 app:boxCornerRadiusTopEnd="20dp"
                 app:boxCornerRadiusTopStart="20dp">
 
@@ -147,8 +133,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
-                    android:gravity="center_horizontal"
-
                     android:textColor="@color/colorRed"
                     android:textSize="18sp" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -157,9 +141,9 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
                 android:hint="aadhar no/voter id/license"
                 app:boxBackgroundMode="outline"
-                android:layout_marginTop="20dp"
 
                 app:boxCornerRadiusTopEnd="20dp"
                 app:boxCornerRadiusTopStart="20dp">
@@ -169,9 +153,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
-                    android:gravity="center_horizontal"
-
-                    android:textColor="@color/colorRed"
+                   android:textColor="@color/colorRed"
                     android:textSize="18sp" />
 
             </com.google.android.material.textfield.TextInputLayout>

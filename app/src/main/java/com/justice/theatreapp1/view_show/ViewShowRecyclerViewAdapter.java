@@ -29,17 +29,14 @@ import com.justice.theatreapp1.R;
 import com.justice.theatreapp1.data.AllData;
 import com.justice.theatreapp1.data.ApplicationClass;
 import com.justice.theatreapp1.theatre.theatre_first_page.ShowData;
-import com.justice.theatreapp1.theatre.theatre_first_page.view_feedback.Feedback;
 import com.justice.theatreapp1.user.update_show.UpdateShowActivity;
 import com.justice.theatreapp1.user.user_first_page.book_my_show.BookData;
 
-import java.util.List;
-
-public class ViewShowRecyclerView extends FirestoreRecyclerAdapter<ShowData, ViewShowRecyclerView.ViewHolder> {
+public class ViewShowRecyclerViewAdapter extends FirestoreRecyclerAdapter<ShowData, ViewShowRecyclerViewAdapter.ViewHolder> {
     private Context context;
     private ViewShowActivity viewShowActivity;
 
-    public ViewShowRecyclerView(Context context, @NonNull FirestoreRecyclerOptions<ShowData> options) {
+    public ViewShowRecyclerViewAdapter(Context context, @NonNull FirestoreRecyclerOptions<ShowData> options) {
         super(options);
         this.context = context;
         this.viewShowActivity = (ViewShowActivity) context;
@@ -68,39 +65,50 @@ public class ViewShowRecyclerView extends FirestoreRecyclerAdapter<ShowData, Vie
         holder.deleteBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AlertDialog.Builder builder = new AlertDialog.Builder(context).setMessage("Are you sure you want to delete?").setNegativeButton("cancel", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-
-
-                    }
-                }).setPositiveButton("ok", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        viewShowActivity.showProgress(true);
-
-                        getSnapshots().getSnapshot(position).getReference().delete().addOnCompleteListener(new OnCompleteListener<Void>() {
-                            @Override
-                            public void onComplete(@NonNull Task<Void> task) {
-                                if (task.isSuccessful()) {
-                                    Toast.makeText(context, "removed..", Toast.LENGTH_SHORT).show();
-                                    removeFilmFromFeedbackAndBookDataList(position);
-
-                                } else {
-                                    String error = task.getException().getMessage();
-                                    Toast.makeText(context, "Error: " + error, Toast.LENGTH_SHORT).show();
-                                }
-                                viewShowActivity.showProgress(false);
-                            }
-                        });
-                        ////////////////////////////////////////
-
-
-                    }
-                });
-                builder.create().show();
+                deleteBtnPressed(position);
             }
         });
+    }
+
+    public void deleteBtnPressed(final int position) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(context).setIcon(R.drawable.ic_delete).setMessage("Are you sure you want to delete?").setNegativeButton("cancel", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                notifyItemChanged(position);
+
+            }
+        }).setPositiveButton("ok", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                removeFilm(position);
+
+
+            }
+        });
+        builder.create().show();
+
+
+    }
+
+    private void removeFilm(final int position) {
+        viewShowActivity.showProgress(true);
+
+        getSnapshots().getSnapshot(position).getReference().delete().addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                if (task.isSuccessful()) {
+                    Toast.makeText(context, "removed..", Toast.LENGTH_SHORT).show();
+                    removeFilmFromFeedbackAndBookDataList(position);
+
+                } else {
+                    String error = task.getException().getMessage();
+                    Toast.makeText(context, "Error: " + error, Toast.LENGTH_SHORT).show();
+                }
+                viewShowActivity.showProgress(false);
+            }
+        });
+        ////////////////////////////////////////
+
     }
 
     private void removeFilmFromFeedbackAndBookDataList(int position) {

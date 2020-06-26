@@ -30,7 +30,7 @@ import com.justice.theatreapp1.user.user_first_page.UserFirstPageActivity;
 
 public class UserSetupActivity extends AppCompatActivity {
     private EditText nameEdtTxt;
-       private EditText mobileEdtTxt;
+    private EditText mobileEdtTxt;
     private EditText addressEdtTxt;
     private EditText bestFriendEdtTxt;
 
@@ -51,7 +51,7 @@ public class UserSetupActivity extends AppCompatActivity {
         setContentView(R.layout.activity_user_setup);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         initWidgets();
-
+        setTitle("User Setup");
         setActionListeners();
     }
 
@@ -165,7 +165,7 @@ public class UserSetupActivity extends AppCompatActivity {
 
     private void initWidgets() {
         nameEdtTxt = findViewById(R.id.nameEdtTxt);
-         mobileEdtTxt = findViewById(R.id.mobileEdtTxt);
+        mobileEdtTxt = findViewById(R.id.mobileEdtTxt);
         addressEdtTxt = findViewById(R.id.addressEdtTxt);
         bestFriendEdtTxt = findViewById(R.id.bestFriendEdtTxt);
         submitBtn = findViewById(R.id.submitBtn);
